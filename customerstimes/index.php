@@ -7,7 +7,7 @@
         <header>
             <div class="row">
                 <div class="col-sm-6">
-                    <h2>Times</h2> <!-- Alterado de Clientes para Plantas -->
+                    <h2>Times</h2> <!-- Alterado de Clientes para times -->
                 </div>
                 <div class="col-sm-6 text-right h2">
                     <a class="btn btn-secondary" href="add.php"><i class="fa-solid fa-user-plus"></i> Novo Time</a> <!-- Alterado -->
@@ -35,27 +35,27 @@
             <thead>
                  <tr>
                     <th>ID</th>
-                    <th width="20%">Espécie</th>
-                    <th>Tipo</th>
-                    <th>Porte (cm)</th>
+                    <th width="20%">Nome</th>
+                    <th>Estado</th>
+                    <th>Divisao</th>
                     <th>Data Cad.</th>
                     <th>Foto</th>
                     <th>Opções</th>
                 </tr>
             </thead>
             <tbody>
-            <?php if ($plantas) : ?>
-            <?php foreach ($plantas as $planta) : ?>
+            <?php if ($times) : ?>
+            <?php foreach ($times as $time) : ?>
                <tr>
-                    <td><?php echo $planta['id']; ?></td>
-                    <td><?php echo htmlspecialchars($planta['especie']); ?></td>
-                    <td><?php echo htmlspecialchars($planta['tipo']); ?></td>
-                    <td><?php echo htmlspecialchars($planta['porte']); ?></td>
-                    <td><?php echo formatadata($planta['datacad'], 'd/m/Y'); ?></td>
+                    <td><?php echo $time['id']; ?></td>
+                    <td><?php echo htmlspecialchars($time['nome']); ?></td>
+                    <td><?php echo htmlspecialchars($time['estado']); ?></td>
+                    <td><?php echo htmlspecialchars($time['divisao']); ?></td>
+                    <td><?php echo formatadata($time['datacad'], 'd/m/Y'); ?></td>
                     <td>
-                        <?php if (!empty($planta['foto'])): ?>
-                            <img src="uploads/<?php echo htmlspecialchars($planta['foto']); ?>" 
-                                 alt="<?php echo htmlspecialchars($planta['especie']); ?>" 
+                        <?php if (!empty($time['foto'])): ?>
+                            <img src="uploads/<?php echo htmlspecialchars($time['foto']); ?>" 
+                                 alt="<?php echo htmlspecialchars($time['nome']); ?>" 
                                  style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
                         <?php else: ?>
                             <img src="uploads/semimagem.jpg" 
@@ -64,19 +64,18 @@
                          <?php endif; ?>
 
                     </td>
+
                     <td class="actions text-right">
-                        <a href="view.php?id=<?php echo $planta['id']; ?>" class="btn btn-sm btn-dark"><i class="fa-solid fa-eye"></i> Visualizar</a>
-                        <a href="edit.php?id=<?php echo $planta['id']; ?>" class="btn btn-sm btn-secondary"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                        <a href="view.php?id=<?php echo $time['id']; ?>" class="btn btn-sm btn-dark"><i class="fa-solid fa-eye"></i> Visualizar</a>
+                        <a href="edit.php?id=<?php echo $time['id']; ?>" class="btn btn-sm btn-secondary"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                         <a href="#" 
                             class="btn btn-sm btn-light" 
                             data-bs-toggle="modal" 
                             data-bs-target="#delete-modal" 
-                            data-bs-planta-id="<?php echo $planta['id']; ?>"
-                            data-bs-planta-name="<?php echo htmlspecialchars($planta['especie']); ?>">
+                            data-bs-time-id="<?php echo $time['id']; ?>"
+                            data-bs-time-name="<?php echo htmlspecialchars($time['nome']); ?>">
                             <i class="fa-solid fa-trash-can"></i> Excluir
                         </a>
-
-
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -98,15 +97,15 @@
             if (deleteModal) {
                 deleteModal.addEventListener('show.bs.modal', function (event) {
                     var button = event.relatedTarget;
-                    var id = button.getAttribute('data-bs-planta-id');
-                    var name = button.getAttribute('data-bs-planta-name');
+                    var id = button.getAttribute('data-bs-time-id');
+                    var name = button.getAttribute('data-bs-time-name');
                     
                     var modalTitle = this.querySelector('.modal-title');
-                    var plantaName = this.querySelector('#planta-name');
+                    var timeName = this.querySelector('#time-name');
                     var confirmDelete = this.querySelector('#confirm-delete');
                     
-                    if (modalTitle) modalTitle.textContent = 'Excluir Planta: ' + id;
-                    if (plantaName) plantaName.textContent = name;
+                    if (modalTitle) modalTitle.textContent = 'Excluir time: ' + id;
+                    if (timeName) timeName.textContent = name;
                     if (confirmDelete) confirmDelete.href = 'delete.php?id=' + id;
                 });
             }

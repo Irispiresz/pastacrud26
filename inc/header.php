@@ -57,6 +57,17 @@
                     </ul>
                 </li>
 
+                  <!-- TIMES -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-trophy "></i>Times
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="<?php echo BASEURL; ?>customerstimes"><i class="fa-solid fa-trophy"></i>Gerenciar Times</a></li>
+                        <li><a class="dropdown-item" href="<?php echo BASEURL; ?>customerstimes/add.php"><i class="fa-solid fa-plus"></i> Novo Time</a></li>
+                    </ul>
+                </li>
+
                 <!-- USUÁRIOS (somente admin) -->
                 <?php if (isset($_SESSION['user']) && $_SESSION['user'] == "admin") : ?>
                 <li class="nav-item dropdown">

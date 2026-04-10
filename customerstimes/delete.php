@@ -25,23 +25,23 @@ try {
             throw new Exception("ID inválido.");
         }
 
-        // Buscar planta antes de excluir (para pegar o nome da foto)
-        $planta = find('tabelaplantas', $id);
+        // Buscar time antes de excluir (para pegar o nome da foto)
+        $time = find('time', $id);
 
-        if ($planta) {
+        if ($time) {
             // caminho da pasta de uploads conforme functions.php
             $uploadDir = __DIR__ . '/uploads/';
-            if (!empty($planta['foto']) && file_exists($uploadDir . $planta['foto'])) {
-                @unlink($uploadDir . $planta['foto']);
+            if (!empty($time['foto']) && file_exists($uploadDir . $time['foto'])) {
+                @unlink($uploadDir . $time['foto']);
             }
 
             // remover registro do banco
-            remove('tabelaplantas', $id);
+            remove('time', $id);
 
-            $_SESSION['message'] = "Planta excluída com sucesso!";
+            $_SESSION['message'] = "Time excluído com sucesso!";
             $_SESSION['type'] = "success";
         } else {
-            throw new Exception("Planta não encontrada.");
+            throw new Exception("Time não encontrado.");
         }
     } else {
         throw new Exception("ERRO: ID não definido.");
