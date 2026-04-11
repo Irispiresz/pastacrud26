@@ -34,7 +34,7 @@ $db = open_database();
     <?php endif; ?>
 
     <div class="col-xs-6 col-sm-3 col-md-2">
-        <a href="<?php echo BASEURL; ?>customers" class="btn btn-light">
+        <a href="<?php echo BASEURL; ?>customers" class="btn btn-index">
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <i class="fa-solid fa-users fa-5x"></i>
@@ -64,7 +64,7 @@ $db = open_database();
     <?php endif; ?>
 
     <div class="col-xs-6 col-sm-3 col-md-2" id="btn-plantas">
-        <a href="<?php echo BASEURL; ?>customersplantas/index.php" class="btn btn-light">
+        <a href="<?php echo BASEURL; ?>customersplantas/index.php" class="btn btn-index">
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <i class="fa-solid fa-seedling fa-5x"></i>
@@ -77,6 +77,7 @@ $db = open_database();
     </div>
 </div>
 
+
 <!-- parte do customers times-->
 <div class="row mt-2">
     <?php if (isset($_SESSION['user'])) : ?>
@@ -84,7 +85,7 @@ $db = open_database();
         <a href="<?php echo BASEURL; ?>customerstimes/add.php" class="btn btn-secondary">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <i class="fa-solid fa-leaf fa-5x"></i>
+                    <i class="fa-solid fa-plus fa-5x"></i>
                 </div>
                 <div class="col-xs-12 text-center">
                     <p>Novo Time</p>
@@ -95,7 +96,7 @@ $db = open_database();
     <?php endif; ?>
 
     <div class="col-xs-6 col-sm-3 col-md-2" id="btn-plantas">
-        <a href="<?php echo BASEURL; ?>customerstimes/index.php" class="btn btn-light">
+        <a href="<?php echo BASEURL; ?>customerstimes/index.php" class="btn btn-index">
             <div class="row">
                 <div class="col-xs-12 text-center">
                   <i class="fa-solid fa-trophy fa-5x"></i>
@@ -107,6 +108,7 @@ $db = open_database();
         </a>
     </div>
 </div>
+
 <?php if (isset($_SESSION['user'])) : ?>
     <?php if ($_SESSION['user'] === "admin") : ?>
         <div class="row mt-2" id="actions"> 
@@ -123,13 +125,13 @@ $db = open_database();
                 </a>
             </div>
 
-            <div class="col-lg-6 col-sm-3 col-md-2" id="btn-usuarios">
-                <a href="<?php echo BASEURL; ?>usuarios" class="btn btn-light">
+            <div class="col-lg-2 col-sm-3 col-md-2" id="btn-usuarios">
+                <a href="<?php echo BASEURL; ?>usuarios" class="btn btn-index">
                     <div class="row">
                         <div class="col-xl-12 text-center">
                             <i class="fa-solid fa-users-gear fa-5x"></i>
                         </div>
-                        <div class="col-xs-12 text-center">
+                        <div class="col-xl-12 text-center">
                             <p>Usuários</p>
                         </div>
                     </div>
