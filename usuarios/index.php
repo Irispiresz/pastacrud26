@@ -71,7 +71,8 @@ require_admin(); // só admin
                  alt="Foto do usuário">
           </td>
 
-          <td class="actions text-right">
+         <td class="actions">
+                         <div class="d-flex flex-wrap gap-1">
             <a href="view.php?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-dark">
               <i class="fa fa-eye"></i> Visualizar
             </a>
@@ -81,6 +82,7 @@ require_admin(); // só admin
             <a href="#" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#delete-usuario" data-usuario="<?php echo $usuario['id']; ?>" data-nome="<?php echo $usuario['nome']; ?>">
               <i class="fa-solid fa-trash-can"></i> Excluir
             </a>
+            </div>
           </td>
         </tr>
       <?php endforeach; ?>

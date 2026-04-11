@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-sm-6 text-right h2">
                     <a class="btn btn-secondary" href="add.php"><i class="fa-solid fa-user-plus"></i> Novo Time</a> <!-- Alterado -->
-                <a class="btn btn-light" href="index.php"><i class="fas fa-sync-alt"></i> Atualizar</a>
+                <a class="btn btn-index" href="index.php"><i class="fas fa-sync-alt"></i> Atualizar</a>
                 </div>
             </div>
         </header>
@@ -65,7 +65,8 @@
 
                     </td>
 
-                    <td class="actions text-right">
+                    <td class="actions">
+                         <div class="d-flex flex-wrap gap-1">
                         <a href="view.php?id=<?php echo $time['id']; ?>" class="btn btn-sm btn-dark"><i class="fa-solid fa-eye"></i> Visualizar</a>
                         <a href="edit.php?id=<?php echo $time['id']; ?>" class="btn btn-sm btn-secondary"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                         <a href="#" 
@@ -76,7 +77,9 @@
                             data-bs-time-name="<?php echo htmlspecialchars($time['nome']); ?>">
                             <i class="fa-solid fa-trash-can"></i> Excluir
                         </a>
-                    </td>
+                
+                      </div>
+</td>
                 </tr>
             <?php endforeach; ?>
             <?php else : ?>

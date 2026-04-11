@@ -58,7 +58,8 @@ include(HEADER_TEMPLATE);
                     <td><?php echo $customer['cpf_cnpj']; ?></td>
                     <td><?php echo formataTel($customer['mobile']); ?></td>
                     <td><?php echo formatadata($customer['modified'], "d/m/Y - H:i:s"); ?></td>
-                    <td class="actions text-right">
+                    <td class="actions">
+                         <div class="d-flex flex-wrap gap-1">
                         <a href="view.php?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-dark"><i class="fa-solid fa-eye"></i> Visualizar</a>
                         <a href="edit.php?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-secondary"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                       <a href="#" 
@@ -69,8 +70,9 @@ include(HEADER_TEMPLATE);
    data-customer-name="<?php echo htmlspecialchars($customer['name']); ?>">
    <i class="fa-solid fa-trash-can"></i> Excluir
 </a>
-
+                         </div>
                     </td>
+                
                 </tr>
             <?php endforeach; ?>
             <?php else : ?>

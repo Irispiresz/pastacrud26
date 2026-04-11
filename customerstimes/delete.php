@@ -26,7 +26,7 @@ try {
         }
 
         // Buscar time antes de excluir (para pegar o nome da foto)
-        $time = find('time', $id);
+        $time = find('times', $id);
 
         if ($time) {
             // caminho da pasta de uploads conforme functions.php
@@ -36,7 +36,7 @@ try {
             }
 
             // remover registro do banco
-            remove('time', $id);
+            remove('times', $id);
 
             $_SESSION['message'] = "Time excluído com sucesso!";
             $_SESSION['type'] = "success";

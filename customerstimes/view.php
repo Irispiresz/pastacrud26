@@ -31,9 +31,9 @@ include(HEADER_TEMPLATE);
 
     <div class="card mb-4 shadow-sm">
         <div class="card-body text-center">
-            <img src="uploads/<?php echo htmlspecialchars($time['foto'] ?? 'semimagem.jpg'); ?>" 
-                 alt="<?php echo htmlspecialchars($time['nome'] ?? 'Time'); ?>" 
-                 class="img-fluid mb-3" style="max-height: 300px;">
+            <img src="uploads/<?php echo !empty($time['foto']) ? htmlspecialchars($time['foto']) : 'semimagem.jpg'; ?>" 
+     alt="<?php echo htmlspecialchars($time['nome'] ?? 'Time'); ?>" 
+     class="img-fluid" style="max-width: 300px; max-height: 300px; object-fit: cover; border-radius: 8px;">
         </div>
     </div>
 

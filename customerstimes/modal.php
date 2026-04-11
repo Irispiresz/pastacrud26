@@ -3,11 +3,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header bg-danger text-white">
-        <h5 class="modal-title" id="deleteModalLabel">Excluir Planta</h5>
+        <h5 class="modal-title" id="deleteModalLabel">Excluir Time</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
       <div class="modal-body">
-        Tem certeza que deseja excluir esta planta?
+        Tem certeza que deseja excluir este time?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -24,18 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (deleteModal) {
         deleteModal.addEventListener('show.bs.modal', function (event) {
             var button = event.relatedTarget;
-            var id = button.getAttribute('data-bs-planta-id');
-            var name = button.getAttribute('data-bs-planta-name');
+            var id = button.getAttribute('data-bs-time-id');
+            var nome = button.getAttribute('data-bs-time-nome');
             
             var modalTitle = this.querySelector('.modal-title');
-            var plantaName = this.querySelector('#planta-name');
+            var timenome = this.querySelector('#time-nome');
             var confirmDelete = this.querySelector('#confirm-delete');
             
-            if (modalTitle) modalTitle.textContent = 'Excluir Planta: ' + name;
-            if (plantaName) plantaName.textContent = name;
+            if (modalTitle) modalTitle.textContent = 'Excluir Time: ' + nome;
+            if (timenome) timenome.textContent = nome;
             if (confirmDelete) confirmDelete.href = 'delete.php?id=' + id;
         });
     }
 });
-
 </script>

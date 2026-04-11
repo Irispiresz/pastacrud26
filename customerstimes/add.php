@@ -27,6 +27,12 @@ include(HEADER_TEMPLATE);
                 <option>Bahia - BA</option>
                 <option> Ceará - CE</option>
                 <option> Pernambuco - PE</option>
+                <option> Goiás - GO</option>
+                <option> Santa Catarina - SC</option>
+                <option> Paraná - PR</option>
+                <option> Amazonas - AM</option>
+
+
             </select>
             </div>
 

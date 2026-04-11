@@ -64,7 +64,8 @@
                          <?php endif; ?>
 
                     </td>
-                    <td class="actions text-right">
+                    <td class="actions">
+                         <div class="d-flex flex-wrap gap-1">
                         <a href="view.php?id=<?php echo $planta['id']; ?>" class="btn btn-sm btn-dark"><i class="fa-solid fa-eye"></i> Visualizar</a>
                         <a href="edit.php?id=<?php echo $planta['id']; ?>" class="btn btn-sm btn-secondary"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                         <a href="#" 
@@ -76,7 +77,7 @@
                             <i class="fa-solid fa-trash-can"></i> Excluir
                         </a>
 
-
+                            </div>  
                     </td>
                 </tr>
             <?php endforeach; ?>
