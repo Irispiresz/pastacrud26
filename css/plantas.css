@@ -29,8 +29,9 @@ body {
 
 /* NAVBAR */
 .navbar {
-  background: linear-gradient(135deg, #00007c 50%, #c7d40e 50%);
-  border-bottom: 2px solid #1b1b1b;
+  background: linear-gradient(135deg, #00007c 50%,
+  #eeff00 50%);
+  border-bottom: 2px solid #019005;
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
@@ -91,30 +92,56 @@ body {
 .btn:hover {
   transform: translateY(-1px) scale(1.02);
   opacity: 0.95;
+  color: #000029;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #8bc48a 0%, #6b9a7e 100%);
+  background: linear-gradient(135deg, #005007 0%, 
+  #001868 100%);
 }
+.btn-primary:hover {
+  color: #e8f5e8;
+  }
+
 
 .btn-secondary {
-  background: linear-gradient(135deg, #b2d8b2 0%, #6b9a7e 100%);
+  background: linear-gradient(135deg,
+   #00007c 0%, #308aeb 100%);
 }
+.btn-secondary:hover {
+  color: #e8f5e8;
+  }
+
 
 .btn-danger {
   background: linear-gradient(135deg, #f8b2b2 0%, #e57373 100%);
 }
 
-.btn-light {
-  background: #f0f8f0;
-  color: #6b9a7e;
+.btn-dark:hover{
+  color: #e8f5e8;
 }
 
 
+.btn-light {
+  background: linear-gradient(135deg, #005007 0%, 
+  #001868 100%);
+}
+.btn-light:hover {
+  color: #e8f5e8;
+  }
+
+.btn-index {
+   background-color: #cbf2d1;
+   color: #001868;
+  }
+.btn-index:hover {
+  background-color: #001868;
+  color: #e8f5e8;
+  }
 
 /* TABELA */
 .table th {
-  background: linear-gradient(135deg, #a8d5ba 0%, #6b9a7e 100%);
+  background: linear-gradient(135deg, #001868 0%, #cbf2d1 100%);
   color: white;
   padding: 1rem;
   text-align: left;
